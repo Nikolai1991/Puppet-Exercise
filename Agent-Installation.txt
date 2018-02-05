@@ -1,0 +1,10 @@
+hostname puppetagent.test.org
+echo 172.31.90.205 puppetmaster.test.org >> /etc/hosts
+apt-get update
+apt-get install puppet
+vim /etc/puppet/puppet.conf  (add to main - server=puppetmaster.test.org)
+puppet agent --no-daemonize --onetime --verbose
+puppet agent --server puppetmaster.test.org
+puppet agent --test
+puppet agent --enable
+sudo netstat -antp | grep -i list

@@ -1,0 +1,3 @@
+puppet module install puppetlabs-java
+puppet module install puppetlabs-tomcat
+puppet module install puppetlabs-apache

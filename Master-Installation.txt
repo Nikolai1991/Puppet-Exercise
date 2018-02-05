@@ -1,0 +1,13 @@
+hostname puppetmaster.test.org
+apt-get update
+echo 172.31.89.162 puppetagent.test.org >> /etc/hosts
+apt-get update
+apt-get install puppetmaster
+puppet cert list --all
+puppet cert sign puppetagent.test.org
+apt-get install default-jdk
+puppet module install puppetlabs-java
+puppet module install puppetlabs-tomcat
+puppet module install puppetlabs-apache
+vi /etc/puppet/manifests/site.pp (What is written below belongs to him)
+puppet parser validate site.pp
